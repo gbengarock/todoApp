@@ -1,0 +1,19 @@
+
+.itemDisplay {
+  display: flex;
+  min-height: 50px;
+  padding: 0 20px;
+  align-items: center;
+  border-bottom: 1px solid aliceblue;
+}
+
+p {
+  font-size: 20px;
+  padding: 10px 20px 0;
+  font-weight: 200;
+  border-bottom: 1px solid steelblue;
+}
+
+input [type='checkbox'] {
+  margin: 30px;
+}
