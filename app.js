@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const alert = require('alert');
 const _ = require('lodash');
 
-mongoose.connect('mongodb+srv://gbengarock:temi1989@gbengarock.dxlti9d.mongodb.net/todolistDB');
+mongoose.connect('mongodb://localhost:27017/todolistDB');
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -58,7 +58,7 @@ app.post('/', function(req, res){
   let day = date();
 
   if (itemName === ""){
-    alert("Fiels cannot be empty. Enter new todo");
+    alert("Field cannot be empty. Enter new todo");
     return false;
   }
   const item = new Item({
@@ -81,7 +81,7 @@ app.post('/', function(req, res){
   app.post('/delete', function(req, res){
     const checkedList = req.body.checkedList;
     const listName = req.body.listName;
-    let day = date();
+    const day = date();
 
     if (listName === day){
       Item.findByIdAndRemove(checkedList, function(err){
